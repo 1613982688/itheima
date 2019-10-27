@@ -67,6 +67,9 @@ public class MessageConstant {
     public static final String GET_SETMEAL_LIST_SUCCESS = "查询套餐列表数据成功";
     public static final String GET_SETMEAL_LIST_FAIL = "查询套餐列表数据失败";
 
-
+    public static final String GET_MEMBER_SEX_REPORT_SUCCESS = "获取会员性别统计数据成功";
+    public static final String GET_MEMBER_SEX_REPORT_FAIL = "获取会员性别统计数据失败";
+    public static final String GET_MEMBER_BIRTHDAY_REPORT_SUCCESS = "获取会员年龄段统计数据成功";
+    public static final String GET_MEMBER_BIRTHDAY_REPORT_FAIL = "获取会员年龄段统计数据失败";
 
 }

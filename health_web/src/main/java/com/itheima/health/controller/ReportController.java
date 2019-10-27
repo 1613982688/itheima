@@ -186,4 +186,26 @@ public class ReportController {
             return new Result(false, MessageConstant.GET_BUSINESS_REPORT_FAIL);
         }
     }
+    //男女会员统计
+    @RequestMapping("/getMemberSexReport")
+    public Result getMemberSexReport(){
+        try {
+            Map<String,Object> sexMap = reportService.getMemberSexReport();
+            return new Result(true,MessageConstant.GET_MEMBER_SEX_REPORT_SUCCESS,sexMap);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return  new Result(false,MessageConstant.GET_MEMBER_SEX_REPORT_FAIL);
+        }
+    }
+    //会员年龄段统计
+    @RequestMapping("/getMemberBirthdayReport")
+    public Result getMemberBirthdayReport(){
+        try {
+            Map<String,Object> birthdayReport = reportService.getMemberBirthdayReport();
+            return new Result(true,MessageConstant.GET_MEMBER_BIRTHDAY_REPORT_SUCCESS,birthdayReport);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false,MessageConstant.GET_MEMBER_BIRTHDAY_REPORT_FAIL);
+        }
+    }
 }

@@ -6,4 +6,8 @@ public interface ReportService {
 
 
     Map<String,Object> getBusinessReportData();
+
+    Map<String, Object> getMemberSexReport();
+
+    Map<String, Object> getMemberBirthdayReport();
 }

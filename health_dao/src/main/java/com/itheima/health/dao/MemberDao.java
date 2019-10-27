@@ -1,6 +1,11 @@
 package com.itheima.health.dao;
 
 import com.itheima.health.pojo.Member;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName CheckItemDao
@@ -23,5 +28,11 @@ public interface MemberDao {
     Integer findTotalMember();
 
     Integer findRegTimeAfterDateNewMember(String date);
+    //查询男女比例
+    @Select("SELECT IF(sex=1,'男','女' ) name,COUNT(*) value FROM t_member GROUP BY sex")
+    List<Map<String, Object>> getMemberSexReport();
+    @Select("SELECT COUNT(*) value FROM t_member WHERE birthday <= #{number1} AND birthday > #{number2}")
+        //查询某年龄段
+    Integer getMemberBirthdayReport(@Param(value = "number1") String number1, @Param(value = "number2") String number2);
 
 }
